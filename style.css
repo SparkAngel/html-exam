@@ -54,7 +54,6 @@ body {
 
 .details a {
     font-family: Arial;
-font-size: 20px;
 line-height: 23px;
 color: #2F4F4F;
 }
@@ -66,19 +65,62 @@ color: #2F4F4F;
     color: #000000;
 }
 
-@media (max-width: 750px) {
+
+.person:hover {
+    background: #EEEEEE;
+    border-radius: 12px;
+    transform: scale(1.2, 1.2);
+    transition: all 1s;
+    
+} 
+.person:hover .photo img {
+    border-radius: 60px;
+}
+
+.person:hover .extra {
+    display: block;
+    font-family: Arial;
+    color: #000000;
+}
+
+
+
+@media (max-width: 1000px) {
     .people {
-        
+        grid-template-columns: repeat(4, minmax(150px, 200px));
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 50px
+    }
+
+    .person {
+        width: 100%;
+    }
+
+    .photo img {
         width: 100%;
     }
      
 }
 
 @media (max-width: 750px) {
+
     .people {
         display: grid;
-        grid-template-columns: repeat(2, 200px);
-        width: 450px;
+        grid-template-columns: repeat(2,minmax(150px, 200px));
+        width: 530px;
+    }
+     
+}
+
+
+@media (max-width: 550px) {
+
+    .people {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(150px, 200px));
+        width: 500px;
+        padding: 0 35px
     }
      
 }
